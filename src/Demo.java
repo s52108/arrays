@@ -1,11 +1,16 @@
 public class Demo {
     public static void main(String[] args) {
 
-        int[] test = {6,11,12,10,10,13,11};
+        int[] test = new int[] {10,11,12,10,10,13,-11};
+
 
 
         System.out.println(NumberHelper.isSortedArray(test));
-        System.out.println(NumberHelper.removeDuplicates(test));
 
+        test = NumberHelper.removeDuplicates(test);
+        for (int number:
+             test) {
+            System.out.print(number + " ");
+        }
     }
 }

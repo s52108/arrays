@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class NumberHelper {
     public static boolean isSortedArray(int[] numbers) {
@@ -10,18 +11,20 @@ public class NumberHelper {
     }
 
     public static int[] removeDuplicates(int[] numbers) {
-        int[] noMoreDuplicates = new int[numbers.length];
-        for (int i = 0; i < numbers.length - 1; i++) {
-            if (numbers[i] < 0) {
-                noMoreDuplicates[i] = numbers[i];
-            } else if (Arrays.asList(numbers).contains(noMoreDuplicates)) {
-                noMoreDuplicates[i] = -1;
 
-            } else noMoreDuplicates[i] = numbers[i];
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (numbers[i] > 0) {
+                int tempNumber = numbers[i];
+                for (int j = 0; j < i; j++) {
+                    if (tempNumber == numbers[j]) {
+                        numbers[i] = -1;
+                    }
+                }
+
+            }
 
         }
-
-        return noMoreDuplicates;
+        return numbers;
     }
 
 
